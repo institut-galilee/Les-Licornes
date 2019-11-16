@@ -33,4 +33,5 @@ void loop()
     {
       digitalWrite(led, LOW);
     }
+    Serial.print(val);
 }
