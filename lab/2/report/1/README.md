@@ -14,6 +14,6 @@ La vue proposée ci dessus comporte plusieurs composants dont:
 - et bien entendue des cables (noir pour la connection ground, bleu, rouge et vert pour les digitals pin)
 
 ## vue schématique
-![Shéma shématique](schematique.png)
+![vue shématique](schematique.png)
 
 La vue ci dessus est simplement la vue schématique du dispositif, chaque composant étant dans sa notation formelle.
