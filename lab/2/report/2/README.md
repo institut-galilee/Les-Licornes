@@ -25,7 +25,7 @@ void loop()
 ## LDR
 
 Il nous a été demandé de réaliser un graphe selon les valeurs du LDR reçues par l'ordinateur grâce au sérial.
-Des mofications ont été apporté au fichier plot.py afin que le fichier puisse s'exécuter sur les ordianateurs de la fac. 
+Des mofications ont été apportées au fichier plot.py afin que le fichier puisse s'exécuter sur les ordianateurs de la fac. 
 - Le port *MOC6* à été remplacé par */dev/ttyACM0* 
 - Le print de la boucle for car il n'était pas compatible avec la version python3
 
