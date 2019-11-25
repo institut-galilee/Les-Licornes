@@ -61,3 +61,8 @@ void loop() {
   }
 ```
 
+Voici le shéma Fritzing du branchement:
+
+<p align="center">
+  <img src="sketch2.png" width=300px alt="sketch Fritzing"/>
+  </p>
