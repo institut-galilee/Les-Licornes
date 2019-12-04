@@ -26,3 +26,19 @@ void setup()
   pinMode(bleu, OUTPUT);     
 
 }
+
+// the loop routine runs over and over again forever:
+void loop() {
+ 
+                                  // wait 100ms
+  analogWrite(vert,val2);          // gère l'intensité de la led selon la valeur val
+  val2 = (val2 + 5) % 255;
+
+   analogWrite(rouge,val);         // gère l'intensité de la led selon la valeur val
+  val = (val + 5) % 255;
+  
+  analogWrite(bleu,val3);         // gère l'intensité de la led selon la valeur val
+  val3 = (val3 + 5) % 255;
+  delay(100);
+}
+
