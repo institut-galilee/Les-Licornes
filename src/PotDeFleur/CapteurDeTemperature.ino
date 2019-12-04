@@ -1,4 +1,3 @@
-```C
 const int pin = A0;
 
 const double a = 0.0011129148;
@@ -20,4 +19,3 @@ void loop()
     Serial.println(" degre");
     delay(2000);
 }
-```
