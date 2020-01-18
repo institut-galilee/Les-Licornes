@@ -40,3 +40,4 @@ while True:
     sendPatchRequest(data.decode())
 
 #sendPatchRequest("temperature 40")
+#https://arduino.stackexchange.com/questions/49682/sending-float-values-from-python-to-arduino-via-serial-communication
