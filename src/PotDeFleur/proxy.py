@@ -1,5 +1,7 @@
 import serial
 import requests
+import json
+import time
 
 URLDB_PATCH = "https://careplant-bad6a.firebaseio.com/capteurs.json"
 
@@ -8,17 +10,16 @@ i=0
 ser = serial.Serial('COM3',9600)
 ser.close()
 ser.open()
-data = ser.readline()
 splt=data.split()
 
-tempP = 0
-tempM = 0
-humP = 0
-humM = 0
+nomData = ["HM", "HP", "TM", "TP"]
 
 ligne = ''
 val = []
 payload = ''
+
+ts = time.time()
+intervalGet = 10
 
 def sendGetRequest():
 	r = requests.get("https://careplant-bad6a.firebaseio.com/info.json")
@@ -36,8 +37,15 @@ def sendPatchRequest(ligne):
 
 while True:
     data = ser.readline()
-    print (data.decode())
+    print ("Enregistrement : " + data.decode())
     sendPatchRequest(data.decode())
+    if(time.time()-ts > intervalGet):
+        donnee = sendGetRequest()
+        ts = time.time()
+        for (i, e in enumerate(nomData)):
+            serial.println(e + str(donnee[i]))
+    
+    
 
 #sendPatchRequest("temperature 40")
 #https://arduino.stackexchange.com/questions/49682/sending-float-values-from-python-to-arduino-via-serial-communication
