@@ -10,6 +10,8 @@ i=0
 ser = serial.Serial('COM3',9600)
 ser.close()
 ser.open()
+time.sleep(2)
+data = ser.readline()
 splt=data.split()
 
 nomData = ["HM", "HP", "TM", "TP"]
@@ -28,6 +30,7 @@ def sendGetRequest():
 def sendPatchRequest(ligne):
     val = ligne.split(' ')
     payload = '{'+ '"' + val[0] + '": ' + str(val[1]) + '}'
+    print (payload)
     r = requests.patch(URLDB_PATCH, data = payload, headers={"Content-Type": "application/json"})
     if (r.status_code != 200):
         print("Erreur dans l'enregistrement des donnees")
@@ -41,11 +44,13 @@ while True:
     sendPatchRequest(data.decode())
     if(time.time()-ts > intervalGet):
         donnee = sendGetRequest()
+        print("recuperation des infos")
         ts = time.time()
-        for (i, e in enumerate(nomData)):
-            serial.println(e + str(donnee[i]))
-    
-    
+        for e in nomData:
+            valeur = str(donnee.get(e))
+            if (len(valeur) != 2):
+                valeur = '0' + valeur
+            print ("Donnee envoye : " + e+valeur)
 
-#sendPatchRequest("temperature 40")
-#https://arduino.stackexchange.com/questions/49682/sending-float-values-from-python-to-arduino-via-serial-communication
+            ser.write(bytes(e + valeur + '\n', 'ascii'))
+   
