@@ -1,2 +1,3 @@
-# project-template
-This is the official template for student's projects
+# PLANTCARE
+
+Le pot de fleur connecté créer par BOUZIANE Hajar, DECHAUMET Léo et ZHANG Bingqin.
