@@ -1,3 +1,3 @@
 # PLANTCARE
 
-Le pot de fleur connecté créer par BOUZIANE Hajar, DECHAUMET Léo et ZHANG Bingqin.
+Le pot de fleur connecté créé par BOUZIANE Hajar, DECHAUMET Léo et ZHANG Bingqin.
